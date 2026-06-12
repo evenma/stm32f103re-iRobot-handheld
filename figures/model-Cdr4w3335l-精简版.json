@@ -1,0 +1,301 @@
+{
+  "properties": [
+    {
+      "identifier": "ACStatus",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "BackAngulation",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "BatteryOnDet",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "BatteryPercentage",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "Humidity",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "LeftTurnAngulation",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "LegAngulation",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "MTOvercurrentProtect",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "PowerBatteryChargerStatus",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "ReShuiWenDu",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "RightTurnAngulation",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "SetHighSpeedWater",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "SetWarmAirGear",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "SetWarmWaterRegulation",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "SuReQiError",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "Switch",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "TempCurrent",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "WCAccessCloseBottom",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "WCAccessOpenTop",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bAnusCleanout",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bBackDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bBackUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bBianpenDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bBianpenUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bFemalePrivatePartCleanout",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bGuardBarDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bGuardBarUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLeftGuardBarDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLeftGuardBarUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLeftTurnDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLeftTurnUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLegDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bLegUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bNightLampSwitch",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bRightGuardBarDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bRightGuardBarUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bRightTurnDown",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bRightTurnUp",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bSTOP",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bToiletFlush",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bTransformToDeckChair",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bTransformToLieLow",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bTransformToSeat",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bWCAccessClose",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bWCAccessOpen",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "bWarmAirBlower",
+      "dataType": {
+        "type": "bool"
+      }
+    },
+    {
+      "identifier": "coldWater",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "flowMeter",
+      "dataType": {
+        "type": "int32"
+      }
+    },
+    {
+      "identifier": "malfunction",
+      "dataType": {
+        "type": "int32"
+      }
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}

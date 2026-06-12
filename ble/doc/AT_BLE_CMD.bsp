@@ -1,0 +1,616 @@
+<?xml version="1.0"?>
+<BSSignalRegistry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>http</Name>
+  <Latency>0</Latency>
+  <Signals>
+    <BSSignal>
+      <Name> ---DX2002--------基本AT指令--------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------------------------------------------------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>啥也不输入，重启进入透明传输模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>设置：AT+&lt;CMD&gt;=&lt;PARAM&gt;</Name>
+      <DataFormat>String</DataFormat>
+      <Data>返回：\r\nOK\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>读取：AT+&lt;CMD&gt;</Name>
+      <DataFormat>String</DataFormat>
+      <Data>返回：\r\n+&lt;CMD&gt;=&lt;PARAM&gt;\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>上电自动发送 ：IM_READY</Name>
+      <DataFormat>String</DataFormat>
+      <Data>返回：IM_CONN:&lt;ID&gt; 表示连接上</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>连接后：IM_CONN:8</Name>
+      <DataFormat>String</DataFormat>
+      <Data>返回：IM_DISC:&lt;ID&gt; 表示断开</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>ERR:&lt;ID&gt; ；ID ：1，结尾没加回车换行（\r\n,hex:0d0a）；</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>2，参数错误；3，命 令错误；4，权限错误；</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>蓝牙被设备连接上会进 入透传模式,</Name>
+      <DataFormat>String</DataFormat>
+      <Data>所有数据都会被透传，此时发送 AT 指令无效</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>测试指令</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CMD\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★查询—软件版本号</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+VERSION\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：&lt;version&gt;-&lt;mode&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>2.0.9-2  双模模式 BLE+SPP</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★查询\设置—设备名称</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+NAME\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回： +NAME=&lt;name&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+NAME=DX2002</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>++设置：AT+NAME=&lt;name&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>返回：OK   ****模块会自动重启****</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置— BLE 名称(双模情况下)</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+NAMB\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+NAMB=&lt;name&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+NAMB=DX2002(BLE)</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★查询— BLE 模块蓝牙地址</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+LADDR\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+LADDR=&lt;addr&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+LADDR=00000036bb92</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询— SPP 模块蓝牙地址</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+ADDR\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+ADDR=&lt;addr&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+ADDR=00:00:00:01:92:3E</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置—蓝牙名称后缀 MAC</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+NAMEC\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+NAMEC=&lt;param&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+NAMEC=0</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★查询\设置—串口波特率</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BAUD\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+BAUD=&lt;baud&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+BAUD=115200</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★查询\设置—事件通知</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+NOTI\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----返回：+NOTI=&lt;param&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+NOTI=1  连接断开事件通知：1</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★★查询\设置—服务 SERVICE UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+UUID\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+UUID =&lt;service&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+UUID=FFE0</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★★查询\设置—通知 NOTIFY UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CHAR\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+UUID =&lt;notify&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+CHAR=FFE2</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★★查询\设置—写入 WRITE UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+WRITE\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+UUID =&lt;write&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+WRITE=FFE1</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置—低功耗模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+PWRM\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+PWRM=&lt;param&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+PWRM=1  1：正常模式 0:自动低功耗</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置空闲进入低功耗时间</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+AST\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+AST=&lt;time&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+AST=10     10秒</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置空闲进入深睡眠时间</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+AUST\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>----响应：+AUST=&lt;time&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+AUST=0  0：关闭自动进入深睡眠</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置—广播时间间隔</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+ADVI\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：+ADVI=&lt;param&gt; 30~7000mS</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+ADVI=500</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置—模块发射功率</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+POWE\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：+POWE=&lt;power&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+POWE=9    最大功率 9：+6.4 dB</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置—蓝牙设备类型</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+TYPE\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：+TYPE=&lt;param&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+TYPE=0 默认类型(健康类)</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★ 软件重启</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+RESET\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：OK 后马上重启</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>OK 后重启</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>★ 恢复出厂设置</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+DEFAULT\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：+DEFAULT 后 OK  后 重启</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+DEFAULT 后 OK  后 重启</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置主从模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+MASTER\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应：+MASTER=&lt;param&gt; 0：从机  1主机   </Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+MASTER=0</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置蓝牙连接</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CONN\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> ----响应： +CONN=&lt;mac&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+CONN=000000000000 </Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>断开连接</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+DSCET=1\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> 查询\设置—搜索参数</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SETSCANP\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>+SETSCANP=&lt;interval&gt;,&lt;win dow&gt;</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+SETSCANP=160,80</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置 PINCODE</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+PINCODE\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>&lt;pin&gt;: 4 位十进制数蓝牙配 对密码</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+PINCODE=1234</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询\设置 LED 状态</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+LED\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>&lt;state&gt;: 0：复位模式； 1：LED 闪烁模式； 2：LED 不闪烁模式； 3：可配置 IO 模式；</Name>
+      <DataFormat>Hex</DataFormat>
+      <Data>+LED=0</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> 查询\设置—可配置 IO</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+IO\r\n</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>Hex</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>Hex</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> -----EMB1061------基本AT指令--------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>------------------------------------------------------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>啥也不输入，重启进入透明传输模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>进入测试模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data>##\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>进入AT指令模式</Name>
+      <DataFormat>String</DataFormat>
+      <Data>**\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询所有AT指令</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+HELP\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>重启设备</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+REBOOT\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>保持设置</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SAVE\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>版本号查看</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+FMVER\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询MAC地址</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BMAC\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询设备名称</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BNAME\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>设置设备名称</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+BNAME=QY-iBED\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>恢复模块出厂</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+FACTORY\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>--------------串口参数配置----------------------------------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>---------------------------------------------------------------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询用户串口配置参数</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+UARTCFG\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询蓝牙配置参数XXXXXX</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+ADVCFG=1\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询蓝牙发射功率</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+TXPOWER\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询透传UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+SERVUUID\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询透传服务中RXD port 的 UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+RXUUID\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询透传服务中TXD port 的 UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+TXUUID\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> 查询/设置 透传服务中RxLength特性的UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+RXLENUUID\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> 查询/设置 透传服务中TxLength特性的UUID</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+TXLENUUID\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>查询/设置连接参数</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+CONNCFG\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name> 查询/设置异步时间可见状态</Name>
+      <DataFormat>String</DataFormat>
+      <Data>AT+EVENT\r</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name />
+      <DataFormat>String</DataFormat>
+      <Data />
+      <Latency>200</Latency>
+      <Active>true</Active>
+    </BSSignal>
+    <BSSignal>
+      <Name>-------------------------------------------------------------------</Name>
+      <DataFormat>String</DataFormat>
+      <Data>-----------------------------------------------------------------------</Data>
+      <Latency>0</Latency>
+      <Active>false</Active>
+    </BSSignal>
+  </Signals>
+</BSSignalRegistry>

@@ -1,0 +1,833 @@
+{
+  "version": "1.0",
+  "profile": {
+    "industryId": "2",
+    "sceneId": "24",
+    "categoryId": "142",
+    "productId": "Cdr4w3335l"
+  },
+  "properties": [
+    {
+      "identifier": "ACStatus",
+      "name": "市电检测",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "有电",
+          "false": "停电"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "BackAngulation",
+      "name": "靠背角度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "90",
+          "min": "0",
+          "step": "1",
+          "unit": "度 / °"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "BatteryOnDet",
+      "name": "电池组在线检测",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "有电池",
+          "false": "没有"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "BatteryPercentage",
+      "name": "动力电池电量",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "百分比 / %"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Humidity",
+      "name": "湿度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "100",
+          "min": "0",
+          "step": "1",
+          "unit": "相对湿度 / %RH"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "LeftTurnAngulation",
+      "name": "左翻身角度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "90",
+          "min": "0",
+          "step": "1",
+          "unit": "度 / °"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "LegAngulation",
+      "name": "腿板角度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "腿部角度，超过水平线，为曲腿角度，+ 号表示，低于水平线，为降腿角度，- 号表示",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "90",
+          "min": "-90",
+          "step": "1",
+          "unit": "度 / °"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "MTOvercurrentProtect",
+      "name": "电机过流检测",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "有电机过流",
+          "false": "无"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "PowerBatteryChargerStatus",
+      "name": "电池组充电状态",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "充电",
+          "false": "未充"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "ReShuiWenDu",
+      "name": "热水温度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "速热器模块出水口热水水温",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "50",
+          "min": "-10",
+          "step": "1",
+          "unit": "℃"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "RightTurnAngulation",
+      "name": "右翻身角度",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "90",
+          "min": "0",
+          "step": "1",
+          "unit": "度 / °"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "SetHighSpeedWater",
+      "name": "清洗力度",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "设置清洗人体时热水冲洗力度，1弱2中3强。默认值3强力",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "3",
+          "min": "1",
+          "step": "1",
+          "unit": "档 / gear"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "SetWarmAirGear",
+      "name": "暖风档位",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "设置暖风档位,4个档位，0自然风/1低温档/2中档/3高温档",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "3",
+          "min": "0",
+          "step": "1",
+          "unit": "档 / gear"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "SetWarmWaterRegulation",
+      "name": "水温调节",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "调节用于人体清洗的水的温度；0自然水温/1低温档/2中档/3高温档",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "3",
+          "min": "0",
+          "step": "1",
+          "unit": "档 / gear"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "SuReQiError",
+      "name": "速热器异常码",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "速热器模块异常，发送的报错码",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "255",
+          "min": "0",
+          "step": "1"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "Switch",
+      "name": "开关",
+      "functionType": "st",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开启",
+          "false": "关闭"
+        }
+      },
+      "functionMode": "property",
+      "industry": "2",
+      "scene": "24",
+      "productType": "142",
+      "required": false
+    },
+    {
+      "identifier": "TempCurrent",
+      "name": "当前温度",
+      "functionType": "st",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "50",
+          "min": "0",
+          "step": "1",
+          "unit": "℃"
+        }
+      },
+      "functionMode": "property",
+      "industry": "2",
+      "scene": "24",
+      "productType": "142",
+      "required": false
+    },
+    {
+      "identifier": "WCAccessCloseBottom",
+      "name": "便门关闭检测",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "彻底关闭",
+          "false": "未关闭"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "WCAccessOpenTop",
+      "name": "便门打开检测",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "彻底打开",
+          "false": "未打开"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bAnusCleanout",
+      "name": "臀部清洁",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bBackDown",
+      "name": "靠背下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bBackUp",
+      "name": "靠背抬升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bBianpenDown",
+      "name": "便盆下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bBianpenUp",
+      "name": "便盆上升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "只有便盆升降",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bFemalePrivatePartCleanout",
+      "name": "前部清洁",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bGuardBarDown",
+      "name": "护栏下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "左右两边护栏同时下降",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bGuardBarUp",
+      "name": "护栏上升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "左右两边护栏同时工作",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLeftGuardBarDown",
+      "name": "左护栏降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLeftGuardBarUp",
+      "name": "左护栏升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLeftTurnDown",
+      "name": "左翻身下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLeftTurnUp",
+      "name": "左翻身开始",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLegDown",
+      "name": "腿板下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bLegUp",
+      "name": "腿板抬升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bNightLampSwitch",
+      "name": "小夜灯",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "打开",
+          "false": "关闭"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bRightGuardBarDown",
+      "name": "右护栏降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bRightGuardBarUp",
+      "name": "右护栏升",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bRightTurnDown",
+      "name": "右翻身下降",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bRightTurnUp",
+      "name": "右翻身开始",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bSTOP",
+      "name": "停",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "急停 紧急停止全部动作 任意动作必须停 ",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bToiletFlush",
+      "name": "马桶冲洗",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "冲水",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bTransformToDeckChair",
+      "name": "躺椅",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bTransformToLieLow",
+      "name": "水平躺位",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bTransformToSeat",
+      "name": "座椅模式",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bWCAccessClose",
+      "name": "便门关闭",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "多轴联动 坐便器下降，便门盖子关闭",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bWCAccessOpen",
+      "name": "便门打开",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "多轴联动： 便门盖子打开，坐便器升起",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "bWarmAirBlower",
+      "name": "暖风烘干",
+      "functionType": "u",
+      "accessMode": "rw",
+      "desc": "开始暖风烘干后，60s自动结束",
+      "dataType": {
+        "type": "bool",
+        "specs": {
+          "true": "开始",
+          "false": "停止"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "coldWater",
+      "name": "冷水水温",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "速热器模块进水口冷水水温",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "50",
+          "min": "-10",
+          "step": "1",
+          "unit": "℃"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "flowMeter",
+      "name": "热水水流",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "热水出水流量*10=cc ",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "255",
+          "min": "0",
+          "step": "1",
+          "unit": "cc"
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    },
+    {
+      "identifier": "malfunction",
+      "name": "电机故障码",
+      "functionType": "u",
+      "accessMode": "r",
+      "desc": "",
+      "dataType": {
+        "type": "int32",
+        "specs": {
+          "max": "255",
+          "min": "0",
+          "step": "1",
+          "unit": ""
+        }
+      },
+      "functionMode": "property",
+      "required": false
+    }
+  ],
+  "events": [],
+  "services": [],
+  "combs": []
+}
