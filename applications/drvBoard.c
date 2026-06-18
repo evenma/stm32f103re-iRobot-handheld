@@ -51,7 +51,7 @@ static rt_bool_t switch_long_pressed = RT_FALSE; // 长按是否已触发
 #define LONG_PRESS_MS_SEWAGE  5500   // KEY_SEWAGE 长按排污（5.5秒）
 #define UNLOCK_TIME_S					120			// 键盘锁解锁时间 单位秒
 /* 点动按键重复发送间隔（毫秒）*/
-#define MOTION_REPEAT_INTERVAL_MS  30
+#define MOTION_REPEAT_INTERVAL_MS  50
 
 /* 点动按键重复发送定时器 */
 static rt_timer_t motion_repeat_timer;
@@ -636,7 +636,7 @@ static void stop_motion_repeat(void)
     current_motion_key = 0;
     /* 发送停止命令（KEY_RELEASE = 0）*/
     // 连续发送三次停止命令，间隔 10ms，提高可靠性
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 1; i++) {
         rt_mb_send(&mbKeyMsg, KEY_RELEASE);
         rt_thread_mdelay(10);
     }
