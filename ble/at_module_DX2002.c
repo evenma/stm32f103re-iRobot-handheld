@@ -144,7 +144,7 @@ restart:
 					}
 			}
 		}else{
-			if(strncmp(_ble_name,_BLE_NAME,sizeof(_BLE_NAME)) != 0 ){
+			if(strncmp(_ble_name,_BLE_NAME,strlen(_BLE_NAME)) != 0 ){
 				if(at_module_set_NAMB(_BLE_NAME) == kNoErr){
 						LOG_D("Success change name by factory name");	
 						rt_thread_delay(500);		
