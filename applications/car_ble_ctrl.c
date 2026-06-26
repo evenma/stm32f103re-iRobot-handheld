@@ -173,6 +173,11 @@ static rt_err_t car_ble_init_once(void)
 		/*发起连接并自动扫描 */
 		at_module_set_PINCODE("1234");
 		at_module_set_SETSCANP(SCAN_INTERVAL, SCAN_WINDOW);		
+		uint8_t	sta = at_module_get_notify();
+		LOG_D("notify status:%x",sta);
+		if(sta != 0xff){
+			at_module_set_notify(0xff);
+		}
 		at_module_get_fw_version();		
     /* Set master mode 设为主模式，此时模块将重启，自动发起扫描*/
     if (ble_set_master_mode() != RT_EOK) {
@@ -180,8 +185,10 @@ static rt_err_t car_ble_init_once(void)
         ble_state = BLE_STATE_ERROR;
         return RT_ERROR;
     }	
+		ble_start_scan();   // 开启扫描
+		rt_thread_mdelay(10000);
     if (ble_connected) {
-        BLE_DBG("Already connected (auto-reconnect), skip AT init.");
+        BLE_DBG("connected (auto-reconnect), skip AT init.");
         return RT_EOK;   // 直接成功，不发送任何 AT 指令
     }			
 						
@@ -195,8 +202,11 @@ static rt_err_t car_ble_init_once(void)
     ATCmdParser_set_mode(0);
     
     ble_state = BLE_STATE_INIT;
-    BLE_DBG("Bluetooth master initialized, waiting for connection...");
-
+		if(ble_connected){
+			BLE_DBG("Bluetooth master initialized, already connected...");
+		}else{
+			BLE_DBG("Bluetooth master initialized, waiting for connection...");
+		}
     return RT_EOK;
 }
 
@@ -227,17 +237,19 @@ static rt_err_t ble_set_master_mode(void)
     uint8_t mode;
     int retry = 3;
     
-    /* Check current mode */
+    /* Check current mode  
+				Bit0:BLE 从机使能 Bit2:BLE 主机使能 默认值：01
+		*/
     mode = at_module_get_MASTER();
 		BLE_DBG("mode=%d",mode);
-//		if(mode){
+//		if(mode & 0x04){
 //				BLE_DBG("Already in master mode");
 //				return RT_EOK;
 //		}
 
     /* Set master mode */
     while (retry--) {
-        if (at_module_set_MASTER(1) == kNoErr) {
+        if (at_module_set_MASTER(0x04) == kNoErr) {
             BLE_DBG("Master mode set, module will reboot...");
             /* Module reboots automatically, wait for it */
             rt_thread_mdelay(1500);
@@ -420,6 +432,8 @@ int ble_disc(void)
         LOG_I("Bluetooth disconnected by user command");
         ble_connected = RT_FALSE;
         connecting = RT_FALSE;
+				rt_thread_mdelay(100);
+				at_module_RESET();
         return 0;
     } else {
         LOG_E("Failed to disconnect");

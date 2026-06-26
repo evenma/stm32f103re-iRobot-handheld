@@ -307,7 +307,7 @@ const char* at_module_get_PINCODE(void);
  */
 mx_status at_module_set_PINCODE(char pin[5]);
 mx_status at_module_set_SETSCANP(uint32_t interval, uint32_t window);
-
+void ble_start_scan(void);
 /*============================================================================
  *                           Data transmission (raw)
  *============================================================================*/

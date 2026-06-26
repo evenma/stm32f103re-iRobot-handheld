@@ -204,13 +204,12 @@ restart:
 		if (ble_connected) {
         return RT_EOK;   // 直接成功，不发送任何 AT 指令
     }	
-//	cmd = at_module_get_notify();
-//	if(cmd){
-//		LOG_D("Notifies the connection disconnection event");
-//	}else{
-//		LOG_D("Disconnection events are not notified");	
-//	}
-//	rt_thread_delay(100);
+	cmd = at_module_get_notify();
+	LOG_D("notify status:%x",cmd);
+	if(cmd != 0xff){
+		at_module_set_notify(0xff);
+	}
+	rt_thread_delay(100);
 		if (ble_connected) {
         return RT_EOK;   // 直接成功，不发送任何 AT 指令
     }		
@@ -418,7 +417,7 @@ uint8_t at_module_get_notify(void)
 	uint8_t i,param;
 	for(i=0;i<3;i++){
 		if ((ATCmdParser_send("AT+NOTI")
-       && ATCmdParser_recv("+NOTI=%d\r\n", &param))) {				 
+       && ATCmdParser_recv("+NOTI=%x\r\n", &param))) {				 
         return param;
     }
 	}
@@ -551,10 +550,9 @@ mx_status at_module_DEFAULT(void)
 
 mx_status at_module_set_MASTER(uint8_t param)
 {
-    if (param > 1) return kParamErr;
     uint8_t i;
-    for (i = 0; i < 3; i++) {
-        if (ATCmdParser_send("AT+MASTER=%d", param) && ATCmdParser_recv("OK\r\n"))
+	  for (i = 0; i < 3; i++) {
+        if (ATCmdParser_send("AT+MASTER=%02X", param) && ATCmdParser_recv("OK\r\n"))
             return kNoErr;
         rt_thread_delay(100);
     }
@@ -590,11 +588,21 @@ uint8_t at_module_get_MASTER(void)
     uint8_t param;
     uint8_t i;
     for (i = 0; i < 3; i++) {
-        if (ATCmdParser_send("AT+MASTER") && ATCmdParser_recv("+MASTER=%d\r\n", &param)) {
+        if (ATCmdParser_send("AT+MASTER") && ATCmdParser_recv("+MASTER=%x\r\n", &param)) {
             return param;
         }
     }
     return 0;
+}
+
+void ble_start_scan(void) {
+    // 发送 AT+SCAN=1 指令启动扫描
+    if (ATCmdParser_send("AT+SCAN=1,0") && ATCmdParser_recv("OK\r\n")) {
+        // 扫描已启动，结果会通过 +SCAN 异步上报
+        LOG_I("Scan started");
+    } else {
+        LOG_E("Failed to start scan");
+    }
 }
 
 mx_status at_module_set_SETSCANP(uint32_t interval, uint32_t window)
@@ -609,12 +617,19 @@ mx_status at_module_set_SETSCANP(uint32_t interval, uint32_t window)
     return kGeneralErr;
 }
 
+/*  默认值 0xff
+bit0:上电打印使能
+bit1:连接打印使能
+bit2:断开打印使能
+bit3:指令错误打印使能
+bit4:主机搜索结果打印使能
+*/
 mx_status at_module_set_notify(uint8_t param)
 {
     if (param > 1) return kParamErr;
     uint8_t i;
     for (i = 0; i < 3; i++) {
-        if (ATCmdParser_send("AT+NOTI=%d", param) && ATCmdParser_recv("OK\r\n"))
+        if (ATCmdParser_send("AT+NOTI=%02X", param) && ATCmdParser_recv("OK\r\n"))
             return kNoErr;
         rt_thread_delay(100);
     }
@@ -646,7 +661,7 @@ mx_status at_module_set_PWRM(uint8_t param)
 }
 
 /** 25
- * @brief	DX2002 module DSCET 断开当前蓝牙连接
+ * @brief	DX2002 module DSCET 断开当前蓝牙连接 需要给模块断电重启
  * cmd： 	AT+DSCET=<param>\r\n  responce: \r\nOK\r\n   <param>:1：断开蓝牙连接
  * @return	status
  */
